@@ -15,7 +15,9 @@ class Verbal_autopsy extends BaseController {
     public $pageShortName = 'Verbal Autopsy';
 
     public function __construct() {
+        
         parent::__construct();
+        
         $this->load->model('death_model', 'modelName');
         $this->load->model('master_model', 'masterModel');
         $this->load->model('menu_model', 'menuModel');
@@ -39,42 +41,38 @@ class Verbal_autopsy extends BaseController {
         $this->global['pageTitle'] = $this->config->item('prefix') . ' : ' . $this->pageTitle;
         $data['pageTitle'] = $this->pageTitle;
         $data['controller'] = $this->controller;
-		$data['addMethod'] = 'addNew';
-		$data['editMethod'] = 'editOld';
-		$data['editMethodNew'] = 'editNeonatal';
-		$data['editMethodChild'] = 'editChild';
+        $data['addMethod'] = 'addNew';
+        $data['editMethod'] = 'editOld';
+        $data['editMethodNew'] = 'editNeonatal';
+        $data['editMethodChild'] = 'editChild';
         $data['shortName'] = $this->pageShortName;
         $data['boxTitle'] = 'List';
-		
-		
-		    $data['roundlist'] = $this->modelName->getRoundListList();
-			
-			$round_master_id = 0;
-			$data['round_master_id'] = 0;
-			
-			if($this->input->post('Clear'))
-			{
-				$this->session->unset_userdata('round_master_id'); 
-				$data['round_master_id'] = 0;
-			}
-			
-			$round_master_id = $this->input->post('round_master_id',true);
-			
-			$data['round_master_id'] = $this->session->userdata('round_master_id');
-			
-			if($this->input->post('search'))
-			{
-			
-			 $this->session->set_userdata('round_master_id', $round_master_id);
-		     $data['round_master_id'] = $this->session->userdata('round_master_id');
-		    
-	        }
-			
-			if ((!empty($data['round_master_id'])))
-			{
-			
-              $data['userRecords'] = $this->modelName->listing($this->config->item('deathTable'),$data['round_master_id']);
-			}
+
+
+        $data['roundlist'] = $this->modelName->getRoundListList();
+
+        $round_master_id = 0;
+        $data['round_master_id'] = 0;
+
+        if ($this->input->post('Clear')) {
+            $this->session->unset_userdata('round_master_id');
+            $data['round_master_id'] = 0;
+        }
+
+        $round_master_id = $this->input->post('round_master_id', true);
+
+        $data['round_master_id'] = $this->session->userdata('round_master_id');
+
+        if ($this->input->post('search')) {
+
+            $this->session->set_userdata('round_master_id', $round_master_id);
+            $data['round_master_id'] = $this->session->userdata('round_master_id');
+        }
+
+        if ((!empty($data['round_master_id']))) {
+
+            $data['userRecords'] = $this->modelName->listing($this->config->item('deathTable'), $data['round_master_id']);
+        }
 
 
         //$data['userRecords'] = $this->modelName->listing($this->config->item('deathTable'));
@@ -150,7 +148,7 @@ class Verbal_autopsy extends BaseController {
 
     function editOld($id = NULL) {
         $baseID = $this->input->get('baseID', TRUE);
-		$household_master_id = $this->input->get('household_master_id', TRUE);
+        $household_master_id = $this->input->get('household_master_id', TRUE);
         if ($id == null) {
             $this->session->set_flashdata('error', "Someting went wrong!! Please try Again");
             redirect($this->controller . '?baseID=' . $baseID);
@@ -166,18 +164,18 @@ class Verbal_autopsy extends BaseController {
 
         $data['VA_Relation'] = $this->modelName->getLookUpList($this->config->item('VA_Relation'));
         $data['va_yes_no'] = $this->modelName->getLookUpList($this->config->item('va_yes_no'));
-        
-		//$data['va_gender'] = $this->modelName->getLookUpList($this->config->item('va_gender'));
+
+        //$data['va_gender'] = $this->modelName->getLookUpList($this->config->item('va_gender'));
         //$data['VA_Marital_Status'] = $this->modelName->getLookUpList($this->config->item('VA_Marital_Status'));
-		
-		$data['va_gender'] = $this->masterModel->getLookUpList($this->config->item('membersextype'));
+
+        $data['va_gender'] = $this->masterModel->getLookUpList($this->config->item('membersextype'));
         $data['VA_Marital_Status'] = $this->masterModel->getLookUpList($this->config->item('maritalstatustyp'));
-        
-		$data['VA_Yes_No_Reluctant_Unknown'] = $this->modelName->getLookUpList($this->config->item('VA_Yes_No_Reluctant_Unknown'));
+
+        $data['VA_Yes_No_Reluctant_Unknown'] = $this->modelName->getLookUpList($this->config->item('VA_Yes_No_Reluctant_Unknown'));
         $data['VA_Education_Institute_Type'] = $this->modelName->getLookUpList($this->config->item('VA_Education_Institute_Type'));
-       // $data['VA_Occupation_Type'] = $this->modelName->getLookUpList($this->config->item('VA_Occupation_Type'));
+        // $data['VA_Occupation_Type'] = $this->modelName->getLookUpList($this->config->item('VA_Occupation_Type'));
         $data['VA_Occupation_Type'] = $this->masterModel->getLookUpList($this->config->item('occupationtyp'));
-		
+
         $data['VA_INJURY_OR_ACCIDENT_TYPE'] = $this->modelName->getLookUpList($this->config->item('VA_INJURY_OR_ACCIDENT_TYPE'));
         $data['VA_Road_OR_Water_Vehicle_Type'] = $this->modelName->getLookUpList($this->config->item('VA_Road_OR_Water_Vehicle_Type'));
         $data['VA_Medicine_Or_Poison_Type'] = $this->modelName->getLookUpList($this->config->item('VA_Medicine_Or_Poison_Type'));
@@ -228,14 +226,17 @@ class Verbal_autopsy extends BaseController {
         $data['VA_Daily_Work_Hampered_By_Breathing_Problem'] = $this->modelName->getLookUpList($this->config->item('VA_Daily_Work_Hampered_By_Breathing_Problem'));
         $data['VA_Breathing_Problem_When'] = $this->modelName->getLookUpList($this->config->item('VA_Breathing_Problem_When'));
 
+        $data['Covid_Positive_Negative'] = $this->modelName->getLookUpList($this->config->item('Covid_Positive_Negative'));
+        $data['verbal_autopsy_specialist_name'] = $this->modelName->getLookUpList($this->config->item('verbal_autopsy_specialist_name'));
+        $data['logged_in_user_role_id'] =$this->role[0];
 
         $this->global['menu'] = $this->menuModel->getMenu($this->role);
         $data['userInfo'] = $this->modelName->getListInfo($id, $this->config->item('deathTable'));
 
 
         $data['household_member'] = $this->modelName->getMemberMasterPresentListByHouseholdIds($household_master_id);
-		
-		$data['intervcode'] = $this->vendorId;
+
+        $data['intervcode'] = $this->vendorId;
 
 
         $this->global['pageTitle'] = $this->config->item('prefix') . ' : ' . $this->pageTitle;
@@ -879,28 +880,57 @@ class Verbal_autopsy extends BaseController {
             'VA_TYPE' => 1
         );
 
-//        echo '<pre/>';
-//        print_r($IDInfo);
-//        exit();
-        //inputs
+        $member_death_extended_info = array(
+            'member_death_id' => $member_death_table_id,
+            'Q7_24_1_A' => $this->input->post('Q7_24_1_A'),
+            'Q7_24_2_A' => $this->input->post('Q7_24_2_A'),
+            'Q7_24_3_A' => $this->input->post('Q7_24_3_A'),
+            'Q7_24_4_A' => $this->input->post('Q7_24_4_A'),
+            'Q7_24_5_A' => $this->input->post('Q7_24_5_A'),
+            'Q7_24_6_A' => $this->input->post('Q7_24_6_A'),
+            'Q7_24_7_A' => $this->input->post('Q7_24_7_A'),
+            'Q7_24_8_A' => $this->input->post('Q7_24_8_A'),
+            'I_A' => $this->input->post('I_A'),
+            'I_B' => $this->input->post('I_B'),
+            'I_C' => $this->input->post('I_C'),
+            'I_D' => $this->input->post('I_D'),
+            'II_A' => $this->input->post('II_A'),
+            'II_B' => $this->input->post('II_B'),
+            'verbal_autopsy_specialist_name' => $this->input->post('verbal_autopsy_specialist_name')
+        );
+
+        $this->db->trans_start();
 
         $result = $this->modelName->updateInfo($IDInfo, $member_death_table_id, $this->config->item('deathTable'));
 
-        if ($result == true) {
+        $this->db->from($this->config->item('deathTableExtended'));
+        $this->db->where('member_death_id', $member_death_table_id);
+        $query = $this->db->get();
+        $deathTableExtended_existence = $query->row();
+
+        if ($deathTableExtended_existence == true) {
+            $result_2 = $this->modelName->updateExtendedTable($member_death_extended_info, $member_death_table_id, $this->config->item('deathTableExtended'));
+        } else {
+            $result_2 = $this->modelName->InsertInfo($member_death_extended_info, $this->config->item('deathTableExtended'));
+        }
+
+        $this->db->trans_complete();
+
+        if ($result == true && $result_2 == true) {
             $this->session->set_flashdata('success', $this->pageShortName . ' updated successfully');
         } else {
             $this->session->set_flashdata('error', $this->pageShortName . ' update failed');
         }
 
-        redirect($this->controller .'/editOld/'.$member_death_table_id.'?household_master_id='.$household_master_id.'&&baseID=' . $baseID);
+        redirect($this->controller . '/editOld/' . $member_death_table_id . '?household_master_id=' . $household_master_id . '&&baseID=' . $baseID);
     }
 
     function editNeonatal($id = NULL) {
         $baseID = $this->input->get('baseID', TRUE);
         $household_master_id = $this->input->get('household_master_id', TRUE);
-		
-		
-		
+
+
+
         if ($id == null) {
             $this->session->set_flashdata('error', "Someting went wrong!! Please try Again");
             redirect($this->controller . '?baseID=' . $baseID);
@@ -916,21 +946,21 @@ class Verbal_autopsy extends BaseController {
 
         $data['VA_Relation'] = $this->modelName->getLookUpList($this->config->item('VA_Relation'));
         $data['va_yes_no'] = $this->modelName->getLookUpList($this->config->item('va_yes_no'));
-       
-	    //$data['va_gender'] = $this->modelName->getLookUpList($this->config->item('va_gender'));
-       // $data['VA_Marital_Status'] = $this->modelName->getLookUpList($this->config->item('VA_Marital_Status'));
-	   
-	    $data['va_gender'] = $this->masterModel->getLookUpList($this->config->item('membersextype'));
+
+        //$data['va_gender'] = $this->modelName->getLookUpList($this->config->item('va_gender'));
+        // $data['VA_Marital_Status'] = $this->modelName->getLookUpList($this->config->item('VA_Marital_Status'));
+
+        $data['va_gender'] = $this->masterModel->getLookUpList($this->config->item('membersextype'));
         $data['VA_Marital_Status'] = $this->masterModel->getLookUpList($this->config->item('maritalstatustyp'));
-		
+
         $data['VA_Yes_No_Reluctant_Unknown'] = $this->modelName->getLookUpList($this->config->item('VA_Yes_No_Reluctant_Unknown'));
         $data['VA_Education_Institute_Type'] = $this->modelName->getLookUpList($this->config->item('VA_Education_Institute_Type'));
-		
-		$data['VA_Occupation_Type'] = $this->masterModel->getLookUpList($this->config->item('occupationtyp'));
-        
-		//$data['VA_Occupation_Type'] = $this->modelName->getLookUpList($this->config->item('VA_Occupation_Type'));
-        
-		$data['VA_INJURY_OR_ACCIDENT_TYPE'] = $this->modelName->getLookUpList($this->config->item('VA_INJURY_OR_ACCIDENT_TYPE'));
+
+        $data['VA_Occupation_Type'] = $this->masterModel->getLookUpList($this->config->item('occupationtyp'));
+
+        //$data['VA_Occupation_Type'] = $this->modelName->getLookUpList($this->config->item('VA_Occupation_Type'));
+
+        $data['VA_INJURY_OR_ACCIDENT_TYPE'] = $this->modelName->getLookUpList($this->config->item('VA_INJURY_OR_ACCIDENT_TYPE'));
         $data['VA_Road_OR_Water_Vehicle_Type'] = $this->modelName->getLookUpList($this->config->item('VA_Road_OR_Water_Vehicle_Type'));
         $data['VA_Medicine_Or_Poison_Type'] = $this->modelName->getLookUpList($this->config->item('VA_Medicine_Or_Poison_Type'));
         $data['VA_Yes_No_Reluctant_NotApplicable_Unknown'] = $this->modelName->getLookUpList($this->config->item('VA_Yes_No_Reluctant_NotApplicable_Unknown'));
@@ -999,13 +1029,15 @@ class Verbal_autopsy extends BaseController {
         $data['VA_Diarrhea_Situation'] = $this->modelName->getLookUpList($this->config->item('VA_Diarrhea_Situation'));
         $data['VA_Baby_Vomit_Looks_Like'] = $this->modelName->getLookUpList($this->config->item('VA_Baby_Vomit_Looks_Like'));
 
+        $data['verbal_autopsy_specialist_name'] = $this->modelName->getLookUpList($this->config->item('verbal_autopsy_specialist_name'));
+
 
         $this->global['menu'] = $this->menuModel->getMenu($this->role);
         $data['userInfo'] = $this->modelName->getListInfo($id, $this->config->item('deathTable'));
-		
-		$data['household_member'] = $this->modelName->getMemberMasterPresentListByHouseholdIds($household_master_id);
-		
-		$data['intervcode'] = $this->vendorId;
+
+        $data['household_member'] = $this->modelName->getMemberMasterPresentListByHouseholdIds($household_master_id);
+
+        $data['intervcode'] = $this->vendorId;
 
 
 
@@ -1487,23 +1519,47 @@ class Verbal_autopsy extends BaseController {
             'Q10_SO' => $this->input->post('Q10_SO'),
             'Q10_DOE' => $Q10_DOE,
             'Q10_SUP_CODE' => $this->input->post('Q10_SUP_CODE'),
-			'inv_status' => $this->input->post('inv_status'),
+            'inv_status' => $this->input->post('inv_status'),
             'updateBy' => $this->vendorId,
             'updatedOn' => date('Y-m-d H:i:s'),
             'VA_TYPE' => 3
         );
 
-
         $result = $this->modelName->updateInfo($IDInfo, $member_death_table_id, $this->config->item('deathTable'));
 
-        if ($result == true) {
+        //added by Ripon
+
+        $member_death_extended_info = array(
+            'member_death_id' => $member_death_table_id,
+            'neonatal_A' => $this->input->post('neonatal_A'),
+            'neonatal_B' => $this->input->post('neonatal_B'),
+            'maternal_C' => $this->input->post('maternal_C'),
+            'maternal_D' => $this->input->post('maternal_D'),
+            'others_E' => $this->input->post('others_E'),
+            'verbal_autopsy_specialist_name' => $this->input->post('verbal_autopsy_specialist_name')
+        );
+
+        $this->db->from($this->config->item('deathTableExtended'));
+        $this->db->where('member_death_id', $member_death_table_id);
+        $query = $this->db->get();
+        $deathTableExtended_existence = $query->row();
+
+        if ($deathTableExtended_existence == true) {
+            $result_2 = $this->modelName->updateExtendedTable($member_death_extended_info, $member_death_table_id, $this->config->item('deathTableExtended'));
+        } else {
+            $result_2 = $this->modelName->InsertInfo($member_death_extended_info, $this->config->item('deathTableExtended'));
+        }
+
+        //added by Ripon
+
+        if ($result == true && $result_2 == true) {
             $this->session->set_flashdata('success', $this->pageShortName . ' updated successfully');
         } else {
             $this->session->set_flashdata('error', $this->pageShortName . ' update failed');
         }
 
         //redirect($this->controller . '/EditNeonatal/'.$member_death_table_id.'?baseID=' . $baseID);
-		redirect($this->controller .'/editNeonatal/'.$member_death_table_id.'?household_master_id='.$household_master_id.'&&baseID=' . $baseID);
+        redirect($this->controller . '/editNeonatal/' . $member_death_table_id . '?household_master_id=' . $household_master_id . '&&baseID=' . $baseID);
     }
 
     function editChild($id = NULL) {
@@ -1526,11 +1582,11 @@ class Verbal_autopsy extends BaseController {
         $data['va_yes_no'] = $this->modelName->getLookUpList($this->config->item('va_yes_no'));
         //$data['va_gender'] = $this->modelName->getLookUpList($this->config->item('va_gender'));
         //$data['VA_Marital_Status'] = $this->modelName->getLookUpList($this->config->item('VA_Marital_Status'));
-		
-		$data['va_gender'] = $this->masterModel->getLookUpList($this->config->item('membersextype'));
+
+        $data['va_gender'] = $this->masterModel->getLookUpList($this->config->item('membersextype'));
         $data['VA_Marital_Status'] = $this->masterModel->getLookUpList($this->config->item('maritalstatustyp'));
-		$data['VA_Occupation_Type'] = $this->masterModel->getLookUpList($this->config->item('occupationtyp'));
-		
+        $data['VA_Occupation_Type'] = $this->masterModel->getLookUpList($this->config->item('occupationtyp'));
+
         $data['VA_Yes_No_Reluctant_Unknown'] = $this->modelName->getLookUpList($this->config->item('VA_Yes_No_Reluctant_Unknown'));
         $data['VA_Education_Institute_Type'] = $this->modelName->getLookUpList($this->config->item('VA_Education_Institute_Type'));
         //$data['VA_Occupation_Type'] = $this->modelName->getLookUpList($this->config->item('VA_Occupation_Type'));
@@ -1608,12 +1664,14 @@ class Verbal_autopsy extends BaseController {
         $data['va_dysentery_stop_situation'] = $this->modelName->getLookUpList($this->config->item('va_dysentery_stop_situation'));
         $data['VA_Body_Curves_Like_Bow'] = $this->modelName->getLookUpList($this->config->item('VA_Body_Curves_Like_Bow'));
 
+        $data['verbal_autopsy_specialist_name'] = $this->modelName->getLookUpList($this->config->item('verbal_autopsy_specialist_name'));
+
 
         $this->global['menu'] = $this->menuModel->getMenu($this->role);
         $data['userInfo'] = $this->modelName->getListInfo($id, $this->config->item('deathTable'));
-		
-		
-		$data['household_member'] = $this->modelName->getMemberMasterPresentListByHouseholdIds($household_master_id);
+
+
+        $data['household_member'] = $this->modelName->getMemberMasterPresentListByHouseholdIds($household_master_id);
         $data['intervcode'] = $this->vendorId;
 
         $this->global['pageTitle'] = $this->config->item('prefix') . ' : ' . $this->pageTitle;
@@ -1957,9 +2015,6 @@ class Verbal_autopsy extends BaseController {
             'Q6_9_6_1' => $this->input->post('Q6_9_6_1'),
             'Q6_9_7' => $this->input->post('Q6_9_7'),
             'Q6_12_1' => $this->input->post('Q6_12_1'),
-            
-            
-            
             'Q7_1' => $this->input->post('Q7_1'),
             'Q7_1_1_D' => $this->input->post('Q7_1_1_D'),
             'Q7_1_4' => $this->input->post('Q7_1_4'),
@@ -1991,7 +2046,7 @@ class Verbal_autopsy extends BaseController {
             'Q10_SO' => $this->input->post('Q10_SO'),
             'Q10_DOE' => $Q10_DOE,
             'Q10_SUP_CODE' => $this->input->post('Q10_SUP_CODE'),
-			'inv_status' => $this->input->post('inv_status'),
+            'inv_status' => $this->input->post('inv_status'),
             'updateBy' => $this->vendorId,
             'updatedOn' => date('Y-m-d H:i:s'),
             'VA_TYPE' => 2);
@@ -2081,59 +2136,65 @@ class Verbal_autopsy extends BaseController {
             'Q8_3_1' => $this->input->post('Q8_3_1'),
             'Q8_3_2' => $Q8_3_2,
             'Q8_3_3' => $this->input->post('Q8_3_3'),
-            
-            'Q6_9_8' => $this->input->post('Q6_9_8'),//shiftable
-            'Q6_9_8_OTHER' => $this->input->post('Q6_9_8_OTHER'),//shiftable
-            'Q6_10_1' => $this->input->post('Q6_10_1'),//shiftable
-            'Q6_10_2_D' => $this->input->post('Q6_10_2_D'),//shiftable
-            'Q6_10_2_H' => $this->input->post('Q6_10_2_H'),//shiftable
-            'Q6_10_3' => $this->input->post('Q6_10_3'),//shiftable
-            'Q6_10_3_OTHER' => $this->input->post('Q6_10_3_OTHER'),//shiftable
-            'Q6_10_4' => $this->input->post('Q6_10_4'),//shiftable
-            'Q6_11_1' => $this->input->post('Q6_11_1'),//shiftable
-            'Q6_11_2' => $this->input->post('Q6_11_2'),//shiftable
-            'Q6_11_2_OTHER' => $this->input->post('Q6_11_2_OTHER'),//shiftable
-            'Q6_11_3' => $this->input->post('Q6_11_3'),//shiftable
-            'Q6_11_3_OTHER' => $this->input->post('Q6_11_3_OTHER'),//shiftable
-            'Q6_11_4' => $this->input->post('Q6_11_4'),//shiftable
-            'Q6_11_5_D' => $this->input->post('Q6_11_5_D'),//shiftable
-            'Q6_11_5_H' => $this->input->post('Q6_11_5_H'),//shiftable
-            
-            'Q6_12_1a' => $this->input->post('Q6_12_1a'),//shiftable
+            'Q6_9_8' => $this->input->post('Q6_9_8'), //shiftable
+            'Q6_9_8_OTHER' => $this->input->post('Q6_9_8_OTHER'), //shiftable
+            'Q6_10_1' => $this->input->post('Q6_10_1'), //shiftable
+            'Q6_10_2_D' => $this->input->post('Q6_10_2_D'), //shiftable
+            'Q6_10_2_H' => $this->input->post('Q6_10_2_H'), //shiftable
+            'Q6_10_3' => $this->input->post('Q6_10_3'), //shiftable
+            'Q6_10_3_OTHER' => $this->input->post('Q6_10_3_OTHER'), //shiftable
+            'Q6_10_4' => $this->input->post('Q6_10_4'), //shiftable
+            'Q6_11_1' => $this->input->post('Q6_11_1'), //shiftable
+            'Q6_11_2' => $this->input->post('Q6_11_2'), //shiftable
+            'Q6_11_2_OTHER' => $this->input->post('Q6_11_2_OTHER'), //shiftable
+            'Q6_11_3' => $this->input->post('Q6_11_3'), //shiftable
+            'Q6_11_3_OTHER' => $this->input->post('Q6_11_3_OTHER'), //shiftable
+            'Q6_11_4' => $this->input->post('Q6_11_4'), //shiftable
+            'Q6_11_5_D' => $this->input->post('Q6_11_5_D'), //shiftable
+            'Q6_11_5_H' => $this->input->post('Q6_11_5_H'), //shiftable
+            'Q6_12_1a' => $this->input->post('Q6_12_1a'), //shiftable
             //till 01-07-2020
-            'Q6_12_2_D' => $this->input->post('Q6_12_2_D'),//shiftable
-            'Q6_12_2_H' => $this->input->post('Q6_12_2_H'),//shiftable
-            'Q6_12_3' => $this->input->post('Q6_12_3'),//shiftable
-            'Q6_12_4' => $this->input->post('Q6_12_4'),//shiftable
-            'Q6_13_1' => $this->input->post('Q6_13_1'),//shiftable
-            'Q6_13_2' => $this->input->post('Q6_13_2'),//shiftable
-            'Q6_13_2_OTHER' => $this->input->post('Q6_13_2_OTHER'),//shiftable
-            'Q6_13_3' => $this->input->post('Q6_13_3'),//shiftable
-            'Q6_14_1' => $this->input->post('Q6_14_1'),//shiftable
-            'Q6_14_2' => $this->input->post('Q6_14_2'),//shiftable
-            'Q6_14_3_M' => $this->input->post('Q6_14_3_M'),//shiftable
-            'Q6_14_3_D' => $this->input->post('Q6_14_3_D'),//shiftable
-            'Q6_15_2' => $this->input->post('Q6_15_2'),//shiftable
-            'Q6_15_3_M' => $this->input->post('Q6_15_3_M'),//shiftable
-            'Q6_15_3_D' => $this->input->post('Q6_15_3_D'),//shiftable
-            'Q6_15_4' => $this->input->post('Q6_15_4'),//shiftable
-            'Q6_15_5' => $this->input->post('Q6_15_5'),//shiftable
-            'Q6_16' => $this->input->post('Q6_16'),//shiftable
-            'Q6_16a' => $this->input->post('Q6_16a'),//shiftable
-            'Q6_16b' => $this->input->post('Q6_16b'),//shiftable
-            'Q6_16_1' => $this->input->post('Q6_16_1'),//shiftable
-            'Q6_16_2' => $this->input->post('Q6_16_2'),//shiftable
-            'Q6_16_3' => $this->input->post('Q6_16_3'),//shiftable
-            'Q6_16_4' => $this->input->post('Q6_16_4'),//shiftable
-            'Q6_17_1' => $this->input->post('Q6_17_1'),//shiftable
-            'Q6_17_2_D' => $this->input->post('Q6_17_2_D'),//shiftable
-            'Q6_17_2_H' => $this->input->post('Q6_17_2_H'),//shiftable
-            'Q6_17_3' => $this->input->post('Q6_17_3'),//shiftable
-            'Q6_17_4_D' => $this->input->post('Q6_17_4_D'),//shiftable
-            'Q6_17_4_H' => $this->input->post('Q6_17_4_H'),//shiftable
-            'Q6_17_5' => $this->input->post('Q6_17_5'),//shiftable
-            'Q6_17_6' => $this->input->post('Q6_17_6'),//shiftable
-            'Q6_18_1' => $this->input->post('Q6_18_1')//shiftable
+            'Q6_12_2_D' => $this->input->post('Q6_12_2_D'), //shiftable
+            'Q6_12_2_H' => $this->input->post('Q6_12_2_H'), //shiftable
+            'Q6_12_3' => $this->input->post('Q6_12_3'), //shiftable
+            'Q6_12_4' => $this->input->post('Q6_12_4'), //shiftable
+            'Q6_13_1' => $this->input->post('Q6_13_1'), //shiftable
+            'Q6_13_2' => $this->input->post('Q6_13_2'), //shiftable
+            'Q6_13_2_OTHER' => $this->input->post('Q6_13_2_OTHER'), //shiftable
+            'Q6_13_3' => $this->input->post('Q6_13_3'), //shiftable
+            'Q6_14_1' => $this->input->post('Q6_14_1'), //shiftable
+            'Q6_14_2' => $this->input->post('Q6_14_2'), //shiftable
+            'Q6_14_3_M' => $this->input->post('Q6_14_3_M'), //shiftable
+            'Q6_14_3_D' => $this->input->post('Q6_14_3_D'), //shiftable
+            'Q6_15_2' => $this->input->post('Q6_15_2'), //shiftable
+            'Q6_15_3_M' => $this->input->post('Q6_15_3_M'), //shiftable
+            'Q6_15_3_D' => $this->input->post('Q6_15_3_D'), //shiftable
+            'Q6_15_4' => $this->input->post('Q6_15_4'), //shiftable
+            'Q6_15_5' => $this->input->post('Q6_15_5'), //shiftable
+            'Q6_16' => $this->input->post('Q6_16'), //shiftable
+            'Q6_16a' => $this->input->post('Q6_16a'), //shiftable
+            'Q6_16b' => $this->input->post('Q6_16b'), //shiftable
+            'Q6_16_1' => $this->input->post('Q6_16_1'), //shiftable
+            'Q6_16_2' => $this->input->post('Q6_16_2'), //shiftable
+            'Q6_16_3' => $this->input->post('Q6_16_3'), //shiftable
+            'Q6_16_4' => $this->input->post('Q6_16_4'), //shiftable
+            'Q6_17_1' => $this->input->post('Q6_17_1'), //shiftable
+            'Q6_17_2_D' => $this->input->post('Q6_17_2_D'), //shiftable
+            'Q6_17_2_H' => $this->input->post('Q6_17_2_H'), //shiftable
+            'Q6_17_3' => $this->input->post('Q6_17_3'), //shiftable
+            'Q6_17_4_D' => $this->input->post('Q6_17_4_D'), //shiftable
+            'Q6_17_4_H' => $this->input->post('Q6_17_4_H'), //shiftable
+            'Q6_17_5' => $this->input->post('Q6_17_5'), //shiftable
+            'Q6_17_6' => $this->input->post('Q6_17_6'), //shiftable
+            'Q6_18_1' => $this->input->post('Q6_18_1'), //shiftable
+            
+            'I_A' => $this->input->post('I_A'),
+            'I_B' => $this->input->post('I_B'),
+            'I_C' => $this->input->post('I_C'),
+            'I_D' => $this->input->post('I_D'),
+            'II_A' => $this->input->post('II_A'),
+            'II_B' => $this->input->post('II_B'),
+            'verbal_autopsy_specialist_name' => $this->input->post('verbal_autopsy_specialist_name')
         );
 
 
@@ -2166,51 +2227,49 @@ class Verbal_autopsy extends BaseController {
             $this->session->set_flashdata('error', $this->pageShortName . ' update failed');
         }
 
-       //redirect($this->controller . '/EditChild/'.$member_death_table_id.'?baseID=' . $baseID);
-	   redirect($this->controller .'/editChild/'.$member_death_table_id.'?household_master_id='.$household_master_id.'&&baseID=' . $baseID);
+        //redirect($this->controller . '/EditChild/'.$member_death_table_id.'?baseID=' . $baseID);
+        redirect($this->controller . '/editChild/' . $member_death_table_id . '?household_master_id=' . $household_master_id . '&&baseID=' . $baseID);
     }
-    
-     public function adult()
-    {
+
+    public function adult() {
 
 
-            $baseID = $this->input->get('baseID', TRUE);
-            $this->global['menu'] =  $this->menuModel->getMenu($this->role);
+        $baseID = $this->input->get('baseID', TRUE);
+        $this->global['menu'] = $this->menuModel->getMenu($this->role);
 
-            $this->global['pageTitle'] = $this->config->item('prefix'). ' : ' .$this->pageTitle;
-            $data['pageTitle'] = $this->pageTitle;
-            $data['controller'] = $this->controller;
-            $data['addMethod'] = 'addNew';
-            $data['editMethod'] = 'editOld';
-            $data['shortName'] = 'Adult';
-            $data['boxTitle'] = 'List';
-			
-			
-
-
-            $data['userRecords'] = $this->modelName->adultListing($this->config->item('deathTable'));
-            
-            
-            $data['fields'] = $this->modelName->getFields($this->config->item('deathTable'));
-            $data['lookUp'] =  $this->modelName->getLookUpInfo();
-            $data['textField'] =  $this->modelName->getTextField();
-            $data['dateFields'] =  $this->modelName->getDateFields();
-
-            $data['dropdown'] = $this->modelName->getDropdown($data['fields'],$data['textField'],$data['dateFields']);
-
-
-            $data['addPerm']  =  $this->getPermission($baseID, $this->role, 'add');
-            $data['editPerm'] =  $this->getPermission($baseID, $this->role, 'edit');
+        $this->global['pageTitle'] = $this->config->item('prefix') . ' : ' . $this->pageTitle;
+        $data['pageTitle'] = $this->pageTitle;
+        $data['controller'] = $this->controller;
+        $data['addMethod'] = 'addNew';
+        $data['editMethod'] = 'editOld';
+        $data['shortName'] = 'Adult';
+        $data['boxTitle'] = 'List';
 
 
 
-            $this->load->view('includes/header', $this->global);
-            $this->load->view('includes/script');
-            $this->load->view($this->controller.'/index_adult', $data);
-            $this->load->view('includes/footer');
 
+        $data['userRecords'] = $this->modelName->adultListing($this->config->item('deathTable'));
+
+
+        $data['fields'] = $this->modelName->getFields($this->config->item('deathTable'));
+        $data['lookUp'] = $this->modelName->getLookUpInfo();
+        $data['textField'] = $this->modelName->getTextField();
+        $data['dateFields'] = $this->modelName->getDateFields();
+
+        $data['dropdown'] = $this->modelName->getDropdown($data['fields'], $data['textField'], $data['dateFields']);
+
+
+        $data['addPerm'] = $this->getPermission($baseID, $this->role, 'add');
+        $data['editPerm'] = $this->getPermission($baseID, $this->role, 'edit');
+
+
+
+        $this->load->view('includes/header', $this->global);
+        $this->load->view('includes/script');
+        $this->load->view($this->controller . '/index_adult', $data);
+        $this->load->view('includes/footer');
     }
-    
+
     public function sav_format_adult() {
 
         $columns = $this->modelName->column_names_adult($this->config->item('deathTable'));
@@ -2271,7 +2330,7 @@ class Verbal_autopsy extends BaseController {
 
     public function dta_format_adult() {
 
-        $result =$this->modelName->adultListing($this->config->item('deathTable'));
+        $result = $this->modelName->adultListing($this->config->item('deathTable'));
 
         $uniqid = uniqid();
 
@@ -2297,48 +2356,45 @@ class Verbal_autopsy extends BaseController {
             unlink($file);
         }
     }
-    
-    public function child()
-    {
 
-            $baseID = $this->input->get('baseID', TRUE);
-            $this->global['menu'] =  $this->menuModel->getMenu($this->role);
+    public function child() {
 
-            $this->global['pageTitle'] = $this->config->item('prefix'). ' : ' .$this->pageTitle;
-            $data['pageTitle'] = $this->pageTitle;
-            $data['controller'] = $this->controller;
-            $data['addMethod'] = 'addNew';
-            $data['editMethod'] = 'editOld';
-            $data['shortName'] = 'Child';
-            $data['boxTitle'] = 'List';
-            $data['userRecords'] = $this->modelName->ChildListing($this->config->item('deathTable'));
-            
+        $baseID = $this->input->get('baseID', TRUE);
+        $this->global['menu'] = $this->menuModel->getMenu($this->role);
+
+        $this->global['pageTitle'] = $this->config->item('prefix') . ' : ' . $this->pageTitle;
+        $data['pageTitle'] = $this->pageTitle;
+        $data['controller'] = $this->controller;
+        $data['addMethod'] = 'addNew';
+        $data['editMethod'] = 'editOld';
+        $data['shortName'] = 'Child';
+        $data['boxTitle'] = 'List';
+        $data['userRecords'] = $this->modelName->ChildListing($this->config->item('deathTable'));
+
 //            echo '<pre/>';
-            
 //            print_r($data['userRecords']); exit();
-            
-            $data['fields'] = $this->modelName->getChildFields($this->config->item('deathTable'));
-			
-			//print_r($data['fields']);
-            $data['lookUp'] =  $this->modelName->getLookUpInfo();
-            $data['textField'] =  $this->modelName->getChildTextField();
-            $data['dateFields'] =  $this->modelName->getChildDateFields();
 
-            $data['textarea']  = ["Q4_1_death_reasons","Q7_3_1_Hname_Haddress","Q7_3_4","Q10_INTERVIEW","Q10_CSQ","Q10_AOC","Q10_SO"];
-            $data['dropdown'] = $this->modelName->getChildDropdown($data['fields'],$data['textField'],$data['dateFields'],$data['textarea']);
+        $data['fields'] = $this->modelName->getChildFields($this->config->item('deathTable'));
 
-            $data['addPerm']  =  $this->getPermission($baseID, $this->role, 'add');
-            $data['editPerm'] =  $this->getPermission($baseID, $this->role, 'edit');
+        //print_r($data['fields']);
+        $data['lookUp'] = $this->modelName->getLookUpInfo();
+        $data['textField'] = $this->modelName->getChildTextField();
+        $data['dateFields'] = $this->modelName->getChildDateFields();
+
+        $data['textarea'] = ["Q4_1_death_reasons", "Q7_3_1_Hname_Haddress", "Q7_3_4", "Q10_INTERVIEW", "Q10_CSQ", "Q10_AOC", "Q10_SO"];
+        $data['dropdown'] = $this->modelName->getChildDropdown($data['fields'], $data['textField'], $data['dateFields'], $data['textarea']);
+
+        $data['addPerm'] = $this->getPermission($baseID, $this->role, 'add');
+        $data['editPerm'] = $this->getPermission($baseID, $this->role, 'edit');
 
 
-            $this->load->view('includes/header', $this->global);
-            $this->load->view('includes/script');
-            $this->load->view($this->controller.'/index_child', $data);
-            $this->load->view('includes/footer');
-
+        $this->load->view('includes/header', $this->global);
+        $this->load->view('includes/script');
+        $this->load->view($this->controller . '/index_child', $data);
+        $this->load->view('includes/footer');
     }
-    
-        public function sav_format_child() {
+
+    public function sav_format_child() {
 
         $columns = $this->modelName->column_names_child($this->config->item('deathTable'));
 
@@ -2424,42 +2480,40 @@ class Verbal_autopsy extends BaseController {
             unlink($file);
         }
     }
-    
-    public function neonate()
-    {
+
+    public function neonate() {
 
 
-            $baseID = $this->input->get('baseID', TRUE);
-            $this->global['menu'] =  $this->menuModel->getMenu($this->role);
+        $baseID = $this->input->get('baseID', TRUE);
+        $this->global['menu'] = $this->menuModel->getMenu($this->role);
 
-            $this->global['pageTitle'] = $this->config->item('prefix'). ' : ' .$this->pageTitle;
-            $data['pageTitle'] = $this->pageTitle;
-            $data['controller'] = $this->controller;
-            $data['addMethod'] = 'addNew';
-            $data['editMethod'] = 'editOld';
-            $data['shortName'] = 'Adult';
-            $data['boxTitle'] = 'List';
+        $this->global['pageTitle'] = $this->config->item('prefix') . ' : ' . $this->pageTitle;
+        $data['pageTitle'] = $this->pageTitle;
+        $data['controller'] = $this->controller;
+        $data['addMethod'] = 'addNew';
+        $data['editMethod'] = 'editOld';
+        $data['shortName'] = 'Adult';
+        $data['boxTitle'] = 'List';
 
-            // $data['userRecords'] = $this->modelName->adultListing($this->config->item('deathTable'));
-            $data['userRecords'] = $this->modelName->NeonateListing($this->config->item('deathTable'));
-            $data['fields'] = $this->modelName->getNeonateFields($this->config->item('deathTable'));
-            $data['lookUp'] =  $this->modelName->getLookUpInfo();
-            $data['textField'] =  $this->modelName->getNeonateTextField();
-            $data['dateFields'] =  $this->modelName->getNeonateDateFields();
-            $data['textarea']  = ["Q4_1_death_reasons","Q6_5_1","Q6_5_3_ADDRESS","Q6_6_4","Q6_6_12","Q8_3_2_HOSPITAL_ADDRESS","Q8_4_2","Q10_INTERVIEW","Q10_CSQ","Q10_AOC","Q10_SO"];
+        // $data['userRecords'] = $this->modelName->adultListing($this->config->item('deathTable'));
+        $data['userRecords'] = $this->modelName->NeonateListing($this->config->item('deathTable'));
+        $data['fields'] = $this->modelName->getNeonateFields($this->config->item('deathTable'));
+        $data['lookUp'] = $this->modelName->getLookUpInfo();
+        $data['textField'] = $this->modelName->getNeonateTextField();
+        $data['dateFields'] = $this->modelName->getNeonateDateFields();
+        $data['textarea'] = ["Q4_1_death_reasons", "Q6_5_1", "Q6_5_3_ADDRESS", "Q6_6_4", "Q6_6_12", "Q8_3_2_HOSPITAL_ADDRESS", "Q8_4_2", "Q10_INTERVIEW", "Q10_CSQ", "Q10_AOC", "Q10_SO"];
 
-            $data['dropdown'] = $this->modelName->getNeonateDropdown($data['fields'],$data['textField'],$data['dateFields'],$data['textarea']);
-
-
-            $data['addPerm']  =  $this->getPermission($baseID, $this->role, 'add');
-            $data['editPerm'] =  $this->getPermission($baseID, $this->role, 'edit');
+        $data['dropdown'] = $this->modelName->getNeonateDropdown($data['fields'], $data['textField'], $data['dateFields'], $data['textarea']);
 
 
-            $this->load->view('includes/header', $this->global);
-            $this->load->view('includes/script');
-            $this->load->view($this->controller.'/index_neonatal', $data);
-            $this->load->view('includes/footer');
+        $data['addPerm'] = $this->getPermission($baseID, $this->role, 'add');
+        $data['editPerm'] = $this->getPermission($baseID, $this->role, 'edit');
 
+
+        $this->load->view('includes/header', $this->global);
+        $this->load->view('includes/script');
+        $this->load->view($this->controller . '/index_neonatal', $data);
+        $this->load->view('includes/footer');
     }
 
 }

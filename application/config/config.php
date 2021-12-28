@@ -732,6 +732,9 @@ $config['VA_Weight_Specific'] = 'VA_Weight_Specific';
 $config['VA_Organ_Distortion'] = 'VA_Organ_Distortion';
 $config['VA_Day_Hour_Reluctant_Unknown'] = 'VA_Day_Hour_Reluctant_Unknown';
 
+$config['Covid_Positive_Negative'] = 'Covid_Positive_Negative';
+$config['verbal_autopsy_specialist_name'] = 'verbal_autopsy_specialist_name';
+
 
 
 /*

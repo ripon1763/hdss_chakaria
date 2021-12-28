@@ -769,17 +769,19 @@
                                         <select onchange="showHide(this.id, 'Q6_2_6_1_off')" id="Q6_2_6_1" class="form-control" name="Q6_2_6_1">
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php
-                                             $i = 1;
-                                            foreach ($VA_Related_To_EDD as $VA_Related_To_EDD_single) { ?>
+                                            $i = 1;
+                                            foreach ($VA_Related_To_EDD as $VA_Related_To_EDD_single) {
+                                                ?>
                                                 <option <?php
                                                 if ($VA_Related_To_EDD_single->code == 1)
                                                     echo " id='Q6_2_6_1_root'";
                                                 else
                                                     echo " id='Q6_2_6_1_" . $i . "'";
                                                 ?> <?php if ($userInfo->Q6_2_6_1 == $VA_Related_To_EDD_single->id) echo ' selected'; ?> value="<?php echo $VA_Related_To_EDD_single->id; ?>"><?php echo $VA_Related_To_EDD_single->name; ?></option>
-                                                <?php ++$i; } ?>
+    <?php ++$i;
+} ?>
                                         </select><br/>
-                                        <input value="<?php if ($userInfo->Q6_2_6_1_week> 0 == true) echo $userInfo->Q6_2_6_1_week; ?>" <?php if ($userInfo->Q6_2_6_1_week> 0 == false) echo " style='display:none'"; ?> type="number" min="1" id="Q6_2_6_1_off" name="Q6_2_6_1_week" class="form-control">
+                                        <input value="<?php if ($userInfo->Q6_2_6_1_week > 0 == true) echo $userInfo->Q6_2_6_1_week; ?>" <?php if ($userInfo->Q6_2_6_1_week > 0 == false) echo " style='display:none'"; ?> type="number" min="1" id="Q6_2_6_1_off" name="Q6_2_6_1_week" class="form-control">
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label><b>6.2.7</b> প্রসবের আগে শেষের কয়েকদিন শিশুটি কি পেটে নড়াচড়া করছিল?</label>
@@ -787,7 +789,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q6_2_7 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-4"> 
@@ -829,7 +831,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q6_3_A == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -839,7 +841,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q6_3_B == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -849,7 +851,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q6_3_C == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -859,7 +861,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q6_3_D == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -869,7 +871,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q6_3_E == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -879,7 +881,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q6_3_F == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -889,7 +891,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q6_3_G == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -899,7 +901,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q6_3_H == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -909,7 +911,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q6_3_I == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -919,7 +921,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q6_3_J == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -929,7 +931,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q6_3_K == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -939,7 +941,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q6_3_L == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -949,7 +951,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q6_3_M == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -959,7 +961,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q6_3_N == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -969,7 +971,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q6_3_O == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -979,7 +981,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q6_3_P == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -989,7 +991,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q6_3_Q == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -999,7 +1001,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q6_3_R == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -1009,7 +1011,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q6_3_S == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -1019,7 +1021,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q6_3_T == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -1029,7 +1031,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q6_3_U == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -1039,7 +1041,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q6_3_V == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -1080,7 +1082,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Water_Broken as $VA_Water_Broken_single) { ?>
                                                 <option <?php if ($userInfo->Q6_3_1 == $VA_Water_Broken_single->id) echo ' selected'; ?> value="<?php echo $VA_Water_Broken_single->id; ?>"><?php echo $VA_Water_Broken_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-4">
@@ -1096,7 +1098,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Delivery_Method as $VA_Delivery_Method_single) { ?>
                                                 <option <?php if ($userInfo->Q6_4 == $VA_Delivery_Method_single->id) echo ' selected'; ?> value="<?php echo $VA_Delivery_Method_single->id; ?>"><?php echo $VA_Delivery_Method_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-4">
@@ -1139,7 +1141,7 @@
                                                     <option id="0" value="">নির্বাচন করুন</option>
                                                     <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                         <option <?php if ($userInfo->Q6_5_2_A == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                    <?php } ?>
+<?php } ?>
                                                 </select>
                                             </td>
                                         </tr>
@@ -1149,7 +1151,7 @@
                                                     <option id="0" value="">নির্বাচন করুন</option>
                                                     <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                         <option <?php if ($userInfo->Q6_5_2_B == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                    <?php } ?>
+<?php } ?>
                                                 </select>
                                             </td>
                                         </tr>
@@ -1159,7 +1161,7 @@
                                                     <option id="0" value="">নির্বাচন করুন</option>
                                                     <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                         <option <?php if ($userInfo->Q6_5_2_C == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                    <?php } ?>
+<?php } ?>
                                                 </select>
                                             </td>
                                         </tr>
@@ -1169,7 +1171,7 @@
                                                     <option id="0" value="">নির্বাচন করুন</option>
                                                     <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                         <option <?php if ($userInfo->Q6_5_2_D == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                    <?php } ?>
+<?php } ?>
                                                 </select>
                                             </td>
                                         </tr>
@@ -1179,7 +1181,7 @@
                                                     <option id="0" value="">নির্বাচন করুন</option>
                                                     <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                         <option <?php if ($userInfo->Q6_5_2_E == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                    <?php } ?>
+<?php } ?>
                                                 </select>
                                             </td>
                                         </tr>
@@ -1189,7 +1191,7 @@
                                                     <option id="0" value="">নির্বাচন করুন</option>
                                                     <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                         <option <?php if ($userInfo->Q6_5_2_F == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                    <?php } ?>
+<?php } ?>
                                                 </select>
                                             </td>
                                         </tr>
@@ -1199,7 +1201,7 @@
                                                     <option id="0" value="">নির্বাচন করুন</option>
                                                     <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                         <option <?php if ($userInfo->Q6_5_2_G == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                    <?php } ?>
+<?php } ?>
                                                 </select>
                                             </td>
                                         </tr>
@@ -1209,7 +1211,7 @@
                                                     <option id="0" value="">নির্বাচন করুন</option>
                                                     <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                         <option <?php if ($userInfo->Q6_5_2_H == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                    <?php } ?>
+<?php } ?>
                                                 </select>
                                             </td>
                                         </tr>
@@ -1219,7 +1221,7 @@
                                                     <option id="0" value="">নির্বাচন করুন</option>
                                                     <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                         <option <?php if ($userInfo->Q6_5_2_I == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                    <?php } ?>
+<?php } ?>
                                                 </select>
                                             </td>
                                         </tr>
@@ -1229,7 +1231,7 @@
                                                     <option id="0" value="">নির্বাচন করুন</option>
                                                     <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                         <option <?php if ($userInfo->Q6_5_2_J == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                    <?php } ?>
+<?php } ?>
                                                 </select>
                                             </td>
                                         </tr>
@@ -1283,7 +1285,7 @@
                                                     <option id="0" value="">নির্বাচন করুন</option>
                                                     <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                         <option <?php if ($userInfo->Q6_5_4_A == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                    <?php } ?>
+<?php } ?>
                                                 </select>
                                             </td>
                                         </tr>
@@ -1293,7 +1295,7 @@
                                                     <option id="0" value="">নির্বাচন করুন</option>
                                                     <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                         <option <?php if ($userInfo->Q6_5_4_B == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                    <?php } ?>
+<?php } ?>
                                                 </select>
                                             </td>
                                         </tr>
@@ -1303,7 +1305,7 @@
                                                     <option id="0" value="">নির্বাচন করুন</option>
                                                     <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                         <option <?php if ($userInfo->Q6_5_4_C == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                    <?php } ?>
+<?php } ?>
                                                 </select>
                                             </td>
                                         </tr>
@@ -1313,7 +1315,7 @@
                                                     <option id="0" value="">নির্বাচন করুন</option>
                                                     <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                         <option <?php if ($userInfo->Q6_5_4_D == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                    <?php } ?>
+<?php } ?>
                                                 </select>
                                             </td>
                                         </tr>
@@ -1323,7 +1325,7 @@
                                                     <option id="0" value="">নির্বাচন করুন</option>
                                                     <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                         <option <?php if ($userInfo->Q6_5_4_E == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                    <?php } ?>
+<?php } ?>
                                                 </select>
                                             </td>
                                         </tr>
@@ -1333,7 +1335,7 @@
                                                     <option id="0" value="">নির্বাচন করুন</option>
                                                     <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                         <option <?php if ($userInfo->Q6_5_4_F == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                    <?php } ?>
+<?php } ?>
                                                 </select>
                                             </td>
                                         </tr>
@@ -1343,7 +1345,7 @@
                                                     <option id="0" value="">নির্বাচন করুন</option>
                                                     <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                         <option <?php if ($userInfo->Q6_5_4_G == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                    <?php } ?>
+<?php } ?>
                                                 </select>
                                             </td>
                                         </tr>
@@ -1353,7 +1355,7 @@
                                                     <option id="0" value="">নির্বাচন করুন</option>
                                                     <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                         <option <?php if ($userInfo->Q6_5_4_H == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                    <?php } ?>
+<?php } ?>
                                                 </select>
                                             </td>
                                         </tr>
@@ -1363,7 +1365,7 @@
                                                     <option id="0" value="">নির্বাচন করুন</option>
                                                     <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                         <option <?php if ($userInfo->Q6_5_4_I == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                    <?php } ?>
+<?php } ?>
                                                 </select>
                                             </td>
                                         </tr>
@@ -1374,7 +1376,7 @@
                                                     <option id="0" value="">নির্বাচন করুন</option>
                                                     <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                         <option <?php if ($userInfo->Q6_5_4_J == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                    <?php } ?>
+<?php } ?>
                                                 </select>
                                             </td>
                                         </tr>
@@ -1417,7 +1419,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q6_5_5 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-12">
@@ -1430,7 +1432,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q6_5_6_A == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -1440,7 +1442,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q6_5_6_B == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -1450,7 +1452,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q6_5_6_C == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -1460,7 +1462,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q6_5_6_D == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -1470,7 +1472,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q6_5_6_E == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -1515,7 +1517,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Baby_Single_Double as $VA_Baby_Single_Double_single) { ?>
                                                 <option <?php if ($userInfo->Q6_6 == $VA_Baby_Single_Double_single->id) echo ' selected'; ?> value="<?php echo $VA_Baby_Single_Double_single->id; ?>"><?php echo $VA_Baby_Single_Double_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div class="col-md-4 form-group">
@@ -1524,7 +1526,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q6_6_1 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div class="col-md-12 form-group">
@@ -1536,7 +1538,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q6_6_2_A == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -1546,7 +1548,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q6_6_2_B == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -1556,7 +1558,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q6_6_2_C == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -1566,7 +1568,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q6_6_2_D == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -1586,7 +1588,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q6_6_3 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div <?php if ($userInfo->Q6_6_3 != 1576) echo " style='display:none;'" ?> class="col-md-4 form-group Q6_6_4_part">
@@ -1613,7 +1615,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Baby_Weight as $VA_Baby_Weight_single) { ?>
                                                 <option <?php if ($userInfo->Q6_6_6 == $VA_Baby_Weight_single->id) echo ' selected'; ?> value="<?php echo $VA_Baby_Weight_single->id; ?>"><?php echo $VA_Baby_Weight_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div class="col-md-4 form-group">
@@ -1624,7 +1626,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q6_6_7 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div class="col-md-4 form-group">
@@ -1635,7 +1637,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q6_6_8 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                 </div>
@@ -1648,7 +1650,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q6_6_9 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div <?php if ($userInfo->Q6_6_9 != 1576) echo " style='display:none;'" ?> class="col-md-4 form-group Q6_6_10_part">
@@ -1665,7 +1667,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q6_6_11 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                 </div>
@@ -1684,7 +1686,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Baby_Body_Color as $VA_Baby_Body_Color_single) { ?>
                                                 <option <?php if ($userInfo->Q6_6_13 == $VA_Baby_Body_Color_single->id) echo ' selected'; ?> value="<?php echo $VA_Baby_Body_Color_single->id; ?>"><?php echo $VA_Baby_Body_Color_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                 </div>
@@ -1703,7 +1705,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_1_0 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div class="col-md-4 form-group clearfix">
@@ -1725,7 +1727,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_2 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div <?php if ($userInfo->Q7_2 != 1576) echo " style='display:none;'" ?> class="col-md-4 form-group Q7_2_yes_part">
@@ -1736,7 +1738,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_2_1 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div <?php if ($userInfo->Q7_2 != 1576) echo " style='display:none;'" ?> class="col-md-4 form-group Q7_2_yes_part">
@@ -1755,7 +1757,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_3 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div <?php if ($userInfo->Q7_3 != 1576) echo " style='display:none;'" ?> class="col-md-4 form-group Q7_3_yes_part">
@@ -1766,7 +1768,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_3a == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div <?php if ($userInfo->Q7_3 != 1576) echo " style='display:none;'" ?> class="col-md-4 form-group Q7_3_yes_part">
@@ -1777,7 +1779,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_3b == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                 </div>
@@ -1797,7 +1799,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Pate_Status as $VA_Pate_Status_single) { ?>
                                                 <option <?php if ($userInfo->Q7_4 == $VA_Pate_Status_single->id) echo ' selected'; ?> value="<?php echo $VA_Pate_Status_single->id; ?>"><?php echo $VA_Pate_Status_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div <?php if ($userInfo->Q7_4 != 1903) echo " style='display:none;'" ?> class="col-md-4 form-group Q7_4_1_part">
@@ -1816,7 +1818,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_5 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div <?php if ($userInfo->Q7_5 != 1576) echo " style='display:none;'" ?> class="col-md-4 form-group Q7_5_yes_part">
@@ -1833,7 +1835,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Pate_Status as $VA_Pate_Status_single) { ?>
                                                 <option <?php if ($userInfo->Q7_5_2 == $VA_Pate_Status_single->id) echo ' selected'; ?> value="<?php echo $VA_Pate_Status_single->id; ?>"><?php echo $VA_Pate_Status_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                 </div>
@@ -1846,7 +1848,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_6 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div <?php if ($userInfo->Q7_6 != 1576) echo " style='display:none;'" ?> class="col-md-4 form-group Q7_6_yes_part">
@@ -1894,7 +1896,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_7 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div <?php if ($userInfo->Q7_7 != 1576) echo " style='display:none;'" ?> class="col-md-4 form-group Q7_7_yes_part">
@@ -1941,7 +1943,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_7_3 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div <?php if ($userInfo->Q7_7_3 != 1576) echo " style='display:none;'" ?> class="col-md-4 form-group Q7_7_4_part">
@@ -1960,7 +1962,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_8 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                 </div>
@@ -1973,7 +1975,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_9 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div class="col-md-4 form-group">
@@ -1984,7 +1986,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_9_1 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div class="col-md-4 form-group">
@@ -1995,7 +1997,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_9_2 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                 </div>
@@ -2008,7 +2010,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_10 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div class="col-md-4 form-group">
@@ -2020,7 +2022,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_11 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div <?php if ($userInfo->Q7_11 != 1576) echo " style='display:none;'" ?> class="col-md-4 form-group Q7_11_yes_part">
@@ -2047,7 +2049,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_12 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div <?php if ($userInfo->Q7_12 != 1576) echo " style='display:none;'" ?> class="col-md-4 form-group Q7_12_yes_part">
@@ -2093,7 +2095,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_13 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                 </div>
@@ -2111,7 +2113,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Baby_Cry as $VA_Baby_Cry_single) { ?>
                                                 <option <?php if ($userInfo->Q7_14 == $VA_Baby_Cry_single->id) echo ' selected'; ?> value="<?php echo $VA_Baby_Cry_single->id; ?>"><?php echo $VA_Baby_Cry_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div <?php if ($userInfo->Q7_14 != 1911) echo " style='display:none;'" ?> class="col-md-4 form-group Q7_14_1_part">
@@ -2128,7 +2130,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Baby_Milk as $VA_Baby_Milk_single) { ?>
                                                 <option <?php if ($userInfo->Q7_15 == $VA_Baby_Milk_single->id) echo ' selected'; ?> value="<?php echo $VA_Baby_Milk_single->id; ?>"><?php echo $VA_Baby_Milk_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                 </div>
@@ -2141,17 +2143,17 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_15_1 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
-                                    <div <?php if ($userInfo->Q7_15== 1918) echo " style='display:none;'" ?> class="col-md-4 form-group Q7_15_1_option_3_hide_part">
+                                    <div <?php if ($userInfo->Q7_15 == 1918) echo " style='display:none;'" ?> class="col-md-4 form-group Q7_15_1_option_3_hide_part">
                                         <label>
                                             <b>7.15.2</b>&nbsp;জন্মের কতক্ষন(দিন/ঘন্টা) পর শিশুটি শুধু বুকের/বোতলের দুধপান করেছিল?
                                         </label>
                                         <input value="<?php echo $userInfo->Q7_15_2_D; ?>" id="Q7_15_2_D" name="Q7_15_2_D" type="text" style="width: 50%;float: left;" class="form-control" placeholder="দিন">
                                         <input value="<?php echo $userInfo->Q7_15_2_H; ?>" id="Q7_15_2_H" name="Q7_15_2_H" type="text" style="width: 50%;float: left;" class="form-control" placeholder="ঘন্টা">
                                     </div>
-                                    <div <?php if ($userInfo->Q7_15== 1918) echo " style='display:none;'" ?> class="col-md-4 form-group Q7_15_1_option_3_hide_part">
+                                    <div <?php if ($userInfo->Q7_15 == 1918) echo " style='display:none;'" ?> class="col-md-4 form-group Q7_15_1_option_3_hide_part">
                                         <label>
                                             <b>7.15.3</b>&nbsp;জন্মের কতদিন পর শিশুটি দুধ পান বন্ধ করে দিয়েছিল? (Code: 99 = অজানা)
                                         </label>
@@ -2159,7 +2161,7 @@
                                     </div>
                                 </div>
                                 <div <?php if ($userInfo->Q5_1_3 == 1576) echo " style='display:none;'" ?> class="col-md-12 Q5_1_3_no_reluctant_unknown">
-                                    <div <?php if ($userInfo->Q7_15== 1918) echo " style='display:none;'" ?> class="col-md-4 form-group Q7_15_1_option_3_hide_part">
+                                    <div <?php if ($userInfo->Q7_15 == 1918) echo " style='display:none;'" ?> class="col-md-4 form-group Q7_15_1_option_3_hide_part">
                                         <label>
                                             <b>7.15.4</b>&nbsp;বাচ্চাটি মৃত্যুর কতক্ষন আগে দুধপান বন্ধ করে দিয়েছিল?
                                         </label> 
@@ -2167,10 +2169,10 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Baby_Drinking_Milk_Shut_Down as $VA_Baby_Drinking_Milk_Shut_Down_single) { ?>
                                                 <option <?php if ($userInfo->Q7_15_4 == $VA_Baby_Drinking_Milk_Shut_Down_single->id) echo ' selected'; ?> value="<?php echo $VA_Baby_Drinking_Milk_Shut_Down_single->id; ?>"><?php echo $VA_Baby_Drinking_Milk_Shut_Down_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
-                                    <div <?php if ($userInfo->Q7_15== 1918) echo " style='display:none;'" ?> class="col-md-4 form-group Q7_15_1_option_3_hide_part">
+                                    <div <?php if ($userInfo->Q7_15 == 1918) echo " style='display:none;'" ?> class="col-md-4 form-group Q7_15_1_option_3_hide_part">
                                         <label>
                                             <b>7.15.5</b>&nbsp;শিশুটি কি শুধু বুকের দুধ পান করেছিল(ORS বা ঔষধ সহ)?
                                         </label>
@@ -2178,7 +2180,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_15_5 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
 
@@ -2190,7 +2192,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_16 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                 </div>
@@ -2215,7 +2217,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_16 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                 </div>
@@ -2228,7 +2230,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_18 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div class="col-md-4 form-group">
@@ -2239,7 +2241,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_18_0 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div class="col-md-4 form-group">
@@ -2250,7 +2252,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_18_1 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                 </div>
@@ -2263,7 +2265,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Leg_Wound as $VA_Leg_Wound_single) { ?>
                                                 <option <?php if ($userInfo->Q7_18_2 == $VA_Leg_Wound_single->id) echo ' selected'; ?> value="<?php echo $VA_Leg_Wound_single->id; ?>"><?php echo $VA_Leg_Wound_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div class="col-md-4 form-group">
@@ -2274,7 +2276,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_18_3 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div class="col-md-4 form-group">
@@ -2285,7 +2287,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_18_4 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                 </div>
@@ -2298,7 +2300,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_19 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div class="col-md-4 form-group">
@@ -2309,7 +2311,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_20 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div <?php if ($userInfo->Q7_20 != 1576) echo " style='display:none;'" ?> class="col-md-4 form-group Q7_20_1_part">
@@ -2323,7 +2325,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q7_20_1_A == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -2333,7 +2335,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q7_20_1_B == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -2343,7 +2345,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q7_20_1_C == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -2353,7 +2355,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q7_20_1_D == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -2396,7 +2398,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Diarrhea_Situation as $VA_Diarrhea_Situation_single) { ?>
                                                 <option <?php if ($userInfo->Q7_21 == $VA_Diarrhea_Situation_single->id) echo ' selected'; ?> value="<?php echo $VA_Diarrhea_Situation_single->id; ?>"><?php echo $VA_Diarrhea_Situation_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div <?php if ($userInfo->Q7_21 != 1926) echo " style='display:none;'" ?> class="col-md-4 form-group Q7_21_yes_part">
@@ -2421,7 +2423,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_21_3 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div class="col-md-4 form-group">
@@ -2432,7 +2434,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_22 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
 
@@ -2444,7 +2446,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Baby_Vomit_Looks_Like as $VA_Baby_Vomit_Looks_Like_single) { ?>
                                                 <option <?php if ($userInfo->Q7_22_1 == $VA_Baby_Vomit_Looks_Like_single->id) echo ' selected'; ?> value="<?php echo $VA_Baby_Vomit_Looks_Like_single->id; ?>"><?php echo $VA_Baby_Vomit_Looks_Like_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                 </div>
@@ -2469,7 +2471,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_23 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                 </div>
@@ -2494,7 +2496,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_24 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div <?php if ($userInfo->Q7_24 != 1576) echo " style='display:none;'" ?> class="col-md-4 form-group Q7_24_yes_part">
@@ -2520,7 +2522,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q7_25 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                 </div>
@@ -2545,7 +2547,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q8_0_A == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -2555,7 +2557,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q8_0_B == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -2565,7 +2567,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q8_0_C == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -2579,7 +2581,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q8_1 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                 </div>
@@ -2728,7 +2730,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q8_1_3_A == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -2738,7 +2740,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q8_1_3_B == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -2748,7 +2750,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q8_1_3_C == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -2758,7 +2760,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q8_1_3_D == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -2768,7 +2770,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q8_1_3_E == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -2778,7 +2780,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q8_1_3_F == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -2819,7 +2821,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q8_1_4 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div class="col-md-4 form-group">
@@ -2830,7 +2832,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q8_2 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                 </div>
@@ -2869,7 +2871,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Hospital_List as $VA_Hospital_List_single) { ?>
                                                             <option <?php if ($userInfo->Q8_2_1_HOSPITAL_1 == $VA_Hospital_List_single->id) echo ' selected'; ?> value="<?php echo $VA_Hospital_List_single->id; ?>"><?php echo $VA_Hospital_List_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                                 <td><input value="<?php if ($userInfo->Q8_2_1_DATE_ADMISSION_1 != "1900-01-01") echo $Q8_2_1_DATE_ADMISSION_1; ?>" id="Q8_2_1_DATE_ADMISSION_1" name="Q8_2_1_DATE_ADMISSION_1" type="text" class="form-control datepicker"></td>
@@ -2881,7 +2883,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Hospital_List as $VA_Hospital_List_single) { ?>
                                                             <option <?php if ($userInfo->Q8_2_1_HOSPITAL_2 == $VA_Hospital_List_single->id) echo ' selected'; ?> value="<?php echo $VA_Hospital_List_single->id; ?>"><?php echo $VA_Hospital_List_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                                 <td><input value="<?php if ($userInfo->Q8_2_1_DATE_ADMISSION_2 != "1900-01-01") echo $Q8_2_1_DATE_ADMISSION_2; ?>" id="Q8_2_1_DATE_ADMISSION_2" name="Q8_2_1_DATE_ADMISSION_2" type="text" class="form-control datepicker"></td>
@@ -2893,10 +2895,10 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Hospital_List as $VA_Hospital_List_single) { ?>
                                                             <option <?php if ($userInfo->Q8_2_1_HOSPITAL_3 == $VA_Hospital_List_single->id) echo ' selected'; ?> value="<?php echo $VA_Hospital_List_single->id; ?>"><?php echo $VA_Hospital_List_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
-                                                
+
                                                 <td><input value="<?php if ($userInfo->Q8_2_1_DATE_ADMISSION_3 != "1900-01-01") echo $Q8_2_1_DATE_ADMISSION_3; ?>" id="Q8_2_1_DATE_ADMISSION_3" name="Q8_2_1_DATE_ADMISSION_3" type="text" class="form-control datepicker"></td>
                                                 <td><input value="<?php echo $userInfo->Q8_2_1_REASON_3; ?>" id="Q8_2_1_REASON_3" name="Q8_2_1_REASON_3" type="text" class="form-control"></td>
                                             </tr>
@@ -2912,7 +2914,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q8_2_2 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div class="col-md-8 form-group">
@@ -2926,7 +2928,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q8_2_3_A == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -2936,7 +2938,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q8_2_3_B == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -2946,7 +2948,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q8_2_3_C == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -2956,7 +2958,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q8_2_3_D == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -2966,7 +2968,7 @@
                                                         <option id="0" value="">নির্বাচন করুন</option>
                                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                             <option <?php if ($userInfo->Q8_2_3_E == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                                        <?php } ?>
+<?php } ?>
                                                     </select>
                                                 </td>
                                             </tr>
@@ -2990,7 +2992,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q8_2_4 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div class="col-md-4 form-group">
@@ -3001,7 +3003,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q8_2_5 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div class="col-md-4 form-group">
@@ -3012,7 +3014,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q8_2_6 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                 </div>
@@ -3025,7 +3027,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q8_2_7 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div class="col-md-4 form-group">
@@ -3109,7 +3111,7 @@
                                         <option id="0" value="">নির্বাচন করুন</option>
                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                             <option <?php if ($userInfo->Q8_4 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                        <?php } ?>
+<?php } ?>
                                     </select>
                                 </div>
 
@@ -3160,7 +3162,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q9_1 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div <?php if ($userInfo->Q9_1 != 1576) echo " style='display:none;'"; ?> class="col-md-4 form-group Q9_1_no_reluctant_unknown">
@@ -3169,7 +3171,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q9_2 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                 </div>
@@ -3244,7 +3246,7 @@
                                         <option id="0" value="">নির্বাচন করুন</option>
                                         <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                             <option <?php if ($userInfo->Q9_3 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                        <?php } ?>
+<?php } ?>
                                     </select>
                                 </div>
                                 <div <?php if ($userInfo->Q9_3 != 1576) echo " style='display:none;'"; ?> class="col-md-4 Q9_3_no_reluctant_unknown">
@@ -3254,7 +3256,7 @@
                                         <option id="0" value="">নির্বাচন করুন</option>
                                         <?php foreach ($va_yes_no as $va_yes_no_single) { ?>
                                             <option <?php if ($userInfo->Q9_4 == $va_yes_no_single->id) echo ' selected'; ?> value="<?php echo $va_yes_no_single->id; ?>"><?php echo $va_yes_no_single->name; ?></option>
-                                        <?php } ?>
+<?php } ?>
                                     </select>
                                 </div>
                                 <div <?php if ($userInfo->Q9_3 != 1576) echo " style='display:none;'"; ?> class="col-md-4 Q9_3_no_reluctant_unknown">
@@ -3302,7 +3304,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q9_6 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div <?php if ($userInfo->Q9_6 != 1576) echo " style='display:none;'"; ?> class="col-md-4 form-group Q9_6_yes_part">
@@ -3311,7 +3313,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q9_7 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div <?php if ($userInfo->Q9_6 != 1576) echo " style='display:none;'"; ?> class="col-md-4 form-group Q9_6_yes_part">
@@ -3320,7 +3322,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q9_8 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                 </div>
@@ -3332,7 +3334,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Yes_No_Reluctant_Unknown as $VA_Yes_No_Reluctant_Unknown_single) { ?>
                                                 <option <?php if ($userInfo->Q9_9 == $VA_Yes_No_Reluctant_Unknown_single->id) echo ' selected'; ?> value="<?php echo $VA_Yes_No_Reluctant_Unknown_single->id; ?>"><?php echo $VA_Yes_No_Reluctant_Unknown_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div <?php if ($userInfo->Q9_9 != 1576) echo " style='display:none;'"; ?> class="col-md-3 form-group 9_9_no_reluctant_unknown">
@@ -3342,7 +3344,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($va_yes_no as $va_yes_no_single) { ?>
                                                 <option <?php if ($userInfo->Q9_9_1 == $va_yes_no_single->id) echo ' selected'; ?> value="<?php echo $va_yes_no_single->id; ?>"><?php echo $va_yes_no_single->name; ?></option>
-                                            <?php } ?>
+                                    <?php } ?>
                                         </select>
                                     </div>
                                     <?php
@@ -3413,7 +3415,7 @@
                                             <option id="0" value="">নির্বাচন করুন</option>
                                             <?php foreach ($VA_Supervisor_List as $VA_Supervisor_List_single) { ?>
                                                 <option <?php if ($userInfo->Q10_SUP_CODE == $VA_Supervisor_List_single->id) echo ' selected'; ?> value="<?php echo $VA_Supervisor_List_single->id; ?>"><?php echo $VA_Supervisor_List_single->name; ?></option>
-                                            <?php } ?>
+<?php } ?>
                                         </select>
                                     </div>
                                     <div class="col-md-4 form-group">
@@ -3431,6 +3433,61 @@
                                             }
                                             ?> value="1">complete</option>
 
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <h4>Cause of Death diagnosis by Professional:</h4>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="col-md-6 form-group">
+                                        <label>
+                                            Neonatal (A):
+                                        </label>
+
+                                        <input value="<?php echo $userInfo->neonatal_A; ?>" name="neonatal_A" type="text" class="form-control">
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label>
+                                            Neonatal (B):
+                                        </label>
+
+                                        <input value="<?php echo $userInfo->neonatal_B; ?>" name="neonatal_B" type="text" class="form-control">
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label>
+                                            Maternal (C):
+                                        </label>
+
+                                        <input value="<?php echo $userInfo->maternal_C; ?>" name="maternal_C" type="text" class="form-control">
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label>
+                                            Maternal cause (D):
+                                        </label>
+
+                                        <input value="<?php echo $userInfo->maternal_D; ?>" name="maternal_D" type="text" class="form-control">
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label>
+                                            Others (E):
+                                        </label>
+
+                                        <input value="<?php echo $userInfo->others_E; ?>" name="others_E" type="text" class="form-control">
+                                    </div>
+
+                                </div>
+                                <div class="col-md-12">
+                                    <h4>Information about Verbal Autopsy Specialist:</h4>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="col-md-4 form-group">
+                                        <label>Verbal Autopsy Specialist Name</label>
+                                        <select name="verbal_autopsy_specialist_name" class="form-control">
+                                            <option id="0" value="">নির্বাচন করুন</option>
+                                            <?php foreach ($verbal_autopsy_specialist_name as $verbal_autopsy_specialist_name_single) { ?>
+                                                <option <?php if ($userInfo->verbal_autopsy_specialist_name == $verbal_autopsy_specialist_name_single->id) echo ' selected'; ?> value="<?php echo $verbal_autopsy_specialist_name_single->id; ?>"><?php echo $verbal_autopsy_specialist_name_single->name; ?></option>
+<?php } ?>
                                         </select>
                                     </div>
                                 </div>
