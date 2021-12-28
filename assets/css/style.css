@@ -1,0 +1,112 @@
+.hide {
+	display: none;
+}
+h1 { font-family:FSLolaWeb;}
+h2 { font-family:FSLolaWeb;}
+body {font-family:source-sans-pro;}
+.main-sidebar {font-family:FSLolaWeb;}
+
+@media print
+{    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}
+
+@media print {
+  a[href]:after {
+    content: none !important;
+  }
+}
+.requisition_header {margin-top:-5px; margin-bottom:20px}
+
+.margin_need { margin-top:10px}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+	padding-left: 200px;
+    left: 0px;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+}
+
+.modal-content {
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.dataTables_length {
+    float: left;
+    padding-right: 20px;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+ .box {margin-bottom:10px}
+ 
+ @font-face{
+    font-family:source-sans-pro;
+    src:url(../fonts/SourceSansPro-Regular.otf.woff) format("woff");
+}
+@font-face{
+    font-family:FSLolaWeb;
+    src:url(../fonts/FSLolaWeb-Regular.woff) format("woff");
+}
+@font-face{
+    font-family:FSLolaWeb;
+    src:url(../fonts/FSLolaWeb-Bold.woff) format("woff");
+    font-weight:bold;
+}
+@font-face{
+    font-family:FSLolaWeb;
+    src:url(../fonts/FSLolaWeb-Italic.woff) format("woff");
+    font-weight:bold;
+    font-style:italic;
+}
+.header-margin {margin-top:-20px; margin-bottom:-20px}
+.content-margin {margin-top:-15px}
+.margin5pxBot {margin-bottom:5px}
+.box-title {color:#00799E; font-weight:bold;font-family:FSLolaWeb} 
+
+.multifile_container { margin-top:10px; background:#ddd; padding:20px}
+  .multifile_remove_input {
+color: red;
+text-decoration: none;
+}
+
+fieldset.scheduler-border 
+{
+    border: 1px solid #eee !important;
+    padding: 0 1.4em 0em 1.4em !important;
+    margin: 0 0 1em 0 !important;
+    
+}
+
+legend.scheduler-border 
+{
+        font-size: 14px !important;
+        font-weight: bold !important;
+        text-align: left !important;
+        width:auto;
+        padding:0 10px;
+        border-bottom:none;
+		background:#eee
+    }
